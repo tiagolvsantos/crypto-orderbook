@@ -4,9 +4,13 @@ Multi-exchange, real-time orderbook with a Go backend and a React + Vite fronten
 
 > **Note:** This is an experimental project built quickly for learning and prototyping. Expect rough edges.
 
+---
+
 Support the project
 - If you want to support my work, you can sign up to BingX using my referral: https://bingx.com/en/invite/JGNQPF
 - Bingx is one of the Global Top 10 Crypto Exchange. It has low fees and great UX. Also a key sponsor to Chelsea Football Club.
+
+---
 
 What it is
 - Backend: Go service that connects to several exchanges, maintains live orderbooks, and serves a WebSocket feed at ws://localhost:8086/ws. See [cmd/main.go](cmd/main.go) and [internal/websocket/server.go](internal/websocket/server.go).
