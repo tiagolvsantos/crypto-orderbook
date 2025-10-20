@@ -63,6 +63,10 @@ func main() {
 			Name:   exchange.BingX,
 			Symbol: *symbol,
 		},
+		{
+			Name:   exchange.Hyperliquid,
+			Symbol: *symbol,
+		},
 		/*{
 			Name:   exchange.BingXf,
 			Symbol: *symbol,

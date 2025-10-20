@@ -3,6 +3,7 @@ import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip
 import { Badge } from '@/components/ui/badge';
 import asterLogo from '@/assets/aster.png';
 import bingxLogo from '@/assets/bingx.png';
+import hyperliquidLogo from '@/assets/hyperliquid.png';
 
 // SVG Icon Components
 function TokenBrandedBybit(props: SVGProps<SVGSVGElement>) {
@@ -52,6 +53,9 @@ function ExchangeIcon({ exchange, className, ...props }: ExchangeIconProps) {
   if (exchangeLower.includes('bingx')) {
     return <img src={bingxLogo} alt="BingX" className={className} />;
   }
+  if (exchangeLower.includes('hyperliquid')) {
+    return <img src={hyperliquidLogo} alt="Hyperliquid" className={className} />;
+  }
 
   // SVG icons
   if (exchangeLower.includes('bybit')) {
@@ -90,7 +94,7 @@ type ExchangeBadgeProps = {
  * Determines if an exchange is perpetual futures based on naming convention
  */
 function isPerps(exchange: string): boolean {
-  return exchange.endsWith('f');
+  return exchange.endsWith('f') || exchange.toLowerCase().includes('hyperliquid');
 }
 
 /**

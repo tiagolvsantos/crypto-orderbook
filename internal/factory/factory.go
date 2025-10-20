@@ -9,6 +9,7 @@ import (
 	"orderbook/internal/exchange/bingx"
 	"orderbook/internal/exchange/bybit"
 	"orderbook/internal/exchange/coinbase"
+	"orderbook/internal/exchange/hyperliquid"
 	"orderbook/internal/exchange/kraken"
 	"orderbook/internal/exchange/okx"
 )
@@ -73,7 +74,9 @@ func NewExchange(config ExchangeConfig) (exchange.Exchange, error) {
 		}), nil
 
 	case exchange.Hyperliquid:
-		return nil, fmt.Errorf("hyperliquid exchange not yet implemented")
+		return hyperliquid.NewFuturesExchange(hyperliquid.Config{
+			Symbol: config.Symbol,
+		}), nil
 
 	default:
 		return nil, fmt.Errorf("unknown exchange: %s", config.Name)
