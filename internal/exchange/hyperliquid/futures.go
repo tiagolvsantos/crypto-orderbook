@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"strings"
 	"sync/atomic"
 	"time"
 
@@ -36,14 +37,8 @@ type Config struct {
 func NewFuturesExchange(config Config) *FuturesExchange {
 	ctx, cancel := context.WithCancel(context.Background())
 
-	// Convert BTCUSDT to BTC for Hyperliquid
-	symbol := config.Symbol
-	if symbol == "BTCUSDT" {
-		symbol = "BTC"
-	} else if symbol == "ETHUSDT" {
-		symbol = "ETH"
-	}
-	// Add more symbol mappings as needed
+	// Convert XXXUSDT to XXX for Hyperliquid (e.g., BTCUSDT -> BTC)
+	symbol := strings.TrimSuffix(config.Symbol, "USDT")
 
 	ex := &FuturesExchange{
 		symbol:     symbol,
