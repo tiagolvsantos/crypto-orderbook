@@ -64,7 +64,7 @@ func main() {
 			Symbol: *symbol,
 		},
 		{
-			Name:   exchange.Hyperliquid,
+			Name:   exchange.Hyperliquidf,
 			Symbol: *symbol,
 		},
 		/*{

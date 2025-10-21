@@ -94,7 +94,7 @@ type ExchangeBadgeProps = {
  * Determines if an exchange is perpetual futures based on naming convention
  */
 function isPerps(exchange: string): boolean {
-  return exchange.endsWith('f') || exchange.toLowerCase() === 'hyperliquid';
+  return exchange.endsWith('f');
 }
 
 /**

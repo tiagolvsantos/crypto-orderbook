@@ -67,7 +67,7 @@ func NewFuturesExchange(config Config) *FuturesExchange {
 
 // GetName returns the exchange name
 func (e *FuturesExchange) GetName() exchange.ExchangeName {
-	return exchange.Hyperliquid
+	return exchange.Hyperliquidf
 }
 
 // GetSymbol returns the trading symbol
