@@ -60,6 +60,7 @@ func getExchangeNames() []exchange.ExchangeName {
 		exchange.Coinbase,
 		exchange.Asterdexf,
 		exchange.BingX,
+		exchange.Hyperliquidf,
 	}
 }
 
