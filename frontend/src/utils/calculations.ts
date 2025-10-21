@@ -8,8 +8,8 @@ export function filterExchangesByMarket(
   filter: MarketFilter
 ): boolean {
   if (filter === 'all') return true;
-  if (filter === 'spot') return !exchange.endsWith('f');
-  if (filter === 'perps') return exchange.endsWith('f');
+  if (filter === 'spot') return !exchange.endsWith('f') && exchange.toLowerCase() !== 'hyperliquid';
+  if (filter === 'perps') return exchange.endsWith('f') || exchange.toLowerCase() === 'hyperliquid';
   return true;
 }
 
